@@ -23,6 +23,23 @@ Here are the instructions to create a user and allocate the appropriate permissi
 
 
 ### JSON for Cost Explorer Permissions
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowGetCostAndUsage",
+            "Effect": "Allow",
+            "Action": [
+                "ce:GetCostAndUsage"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
+```
 
 This policy is required to retrieve billing data using the AWS Cost Explorer API in Retool.
 
@@ -30,6 +47,24 @@ This policy grants the user permission to perform the `GetCostAndUsage` action o
 
 
 ### JSON for EC2 Permissions
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2Access",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:RunInstances",
+                "ec2:DescribeInstances",
+                "ec2:StopInstances",
+                "ec2:StartInstances"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
 
 This policy is required to launch and manage EC2 instances using the Amazon EC2 API in Retool.
 
