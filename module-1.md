@@ -474,13 +474,13 @@ return resultObject;
 
 ```
 
-2. Drag a **Listbox** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
+2. Drag a **Listbox** component inside the third tab of the tabbed container, and set the properties in the right panel inspector to - 
     | Property    | Value                  |
     | ----------- | ---------------------- |
     | Name        | `timePeriodListBox`    |
     | Data source | `getListofTimePeriods` |
     
-3. Drag a **Statistic** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
+3. Drag a **Statistic** component inside the third tab of the tabbed container, and set the properties in the right panel inspector to - 
     | Property       | Value                                          |
     | -------------- | ---------------------------------------------- |
     | Name           | `timePeriodCostStatistic`                      |
@@ -489,7 +489,7 @@ return resultObject;
     | Caption        | `{{currentDateRange.value}}`                   |
     | Positive trend | `{{ self.value <= 20 }}`                    |
     
-4. Drag a **Chart** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
+4. Drag a **Chart** component inside the third tab of the tabbed container, and set the properties in the right panel inspector to - 
     1. Name it `timePeriodCostChart`
     2. Data source: `{{filterCostByTimePeriod.value.data}}`
     3. Chart type: `Bar chart`
@@ -507,7 +507,7 @@ return resultObject;
 
 ​	
 
-2. Drag a **Table** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
+2. Drag a **Table** component inside the third tab of the tabbed container, and set the properties in the right panel inspector to - 
     | Property                        | Value                                   |
     | ------------------------------- | --------------------------------------- |
     | Rename it to                    | `timePeriodTable`                       |
