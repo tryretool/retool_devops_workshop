@@ -72,11 +72,6 @@ _View costs by Time Period_
 | AWS Access Key ID     | `<YOUR AWS Access Key ID>`                      |
 | AWS Secret Access Key | `<YOUR AWS Secret Access Key>`                  |
 
-> 📘 **NOTE:** If you do not have access to an AWS account, or are unable to create a user with the required permissions, for the purposes of this work, use the following burner account credentials. Please note that these will be destroyed after the workshop, and you would not be able to use them:
->
-> - AWS Access Key ID: `AKIA4GSR46W2D5HIPG63`
-> - AWS Secret Key ID: `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`
-
 6. Click **Create resource**
 ![alt_text](images/image26.png "image_tooltip")
 

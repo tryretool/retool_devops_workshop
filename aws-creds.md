@@ -4,18 +4,7 @@ For the purposes of this workshop, you need a user with permissions to access AW
 
 ## Option 1: Use Burner Credentials
 
-If you don't have an AWS account or can't create a user with the necessary permissions, you can use the provided burner account credentials. However, please be aware that **these credentials will be destroyed after the workshop, and you won't be able to use them again**.
-
-### Module 1 (Cost Explorer App)
-
-- AWS Access Key ID: `AKIA4GSR46W2D5HIPG63`
-- AWS Secret Key ID: `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`
-
-### Module 2 (EC2 App)
-
-- **AWS Access Key ID**: `AKIARFLN3W5QNGVU4P7M`
-- **AWS Secret Key ID**: `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`
-
+If you don't have an AWS account or can't create a user with the necessary permissions, you can use the provided [burner account credentials](https://retoolhacks.retool.com/embedded/public/01a42798-34b3-4a33-9829-65e3d8d95e2a). However, please be aware that **these credentials will be destroyed after the workshop, and you won't be able to use them again**.
 
 ## Option 2: Use your own AWS Credentials
 Here are the instructions to create a user and allocate the appropriate permissions. 

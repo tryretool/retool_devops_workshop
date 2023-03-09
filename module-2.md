@@ -40,11 +40,6 @@ In this module, you will learn how to use Retool and Amazon EC2 API to build an 
     | AWS Access Key ID | `YOUR AWS Access Key ID>`             |
     | AWS Secret Key ID | `YOUR AWS Secret Key ID>`             |
 
-> NOTE: If you do not have access to an AWS account, or are unable to create a user with the required permissions, for the purposes of this work, use the following burner account credentials for this app. Please note that these will be destroyed after the workshop, and you would not be able to use them:
->
-> > - **AWS Access Key ID**: `AKIARFLN3W5QNGVU4P7M`
-> > - **AWS Secret Key ID**: `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`
-
 ![alt_text](images/image8.png "image_tooltip")
 
 > - 
