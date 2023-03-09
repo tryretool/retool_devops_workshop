@@ -16,6 +16,16 @@ In this module, you will learn how to use Retool and Amazon EC2 API to build an 
 6. How to add action buttons for each table row to trigger an EC2 API call to start or stop an instance
 7. How to cache the results of a Resource Query
 
+### Option to Import JSON File to Create App
+> We highly recommend following each step to get the most out of the guide. 
+> 
+> However, if you prefer, you can skip Part 2 of this module and [import](https://docs.retool.com/docs/import-export-apps?ref=retool-blog) this JSON file to create the app. 
+> 
+> Keep in mind that **you will still need to go through Part 1 of this module**, and create a Resource since it connects to the AWS API with your AWS credentials.
+> 
+> - [JSON for this app](/ec2_instance_manager_app.json)
+> - [Instructions to create a new app using a JSON file](https://docs.retool.com/docs/import-export-apps?ref=retool-blog)
+
 
 ## Part 1: Create a Resource in Retool for Amazon EC2 API (20 Mins)
 
@@ -311,3 +321,13 @@ return(imageData)
 11. **Refresh the table after launching a new instance:** To ensure that the table automatically displays data when an instance is launched, stopped, or restarted, we will add `getAllEC2Instances` query to the Success section of the `launchNewEC2Instance`, stopEC2InstanceByInstanceID and startEC2InstanceByInstanceID queries, so it’s fired off automatically when these queries run successfully.
 
 ![alt_text](images/image16.png "image_tooltip")
+
+# Wrapping Up
+
+Congratulations! You've successfully completed this self-guided workshop and built two Retool apps that connect to AWS APIs. You learnt how to use Retool to retrieve and display data, create tabbed containers, use list boxes as inputs for queries, and visualize data with charts.
+
+Remember, these two apps are just the tip of the iceberg when it comes to what you can build with Retool and AWS. The possibilities are endless, and we encourage you to continue exploring and building on what you've learned here.
+
+If you have any questions or feedback, please don't hesitate to reach out to us. We'd love to hear your thoughts and help in any way we can.
+
+Thanks again for your time and effort in completing this workshop. We hope you found it valuable and look forward to seeing what you'll create next with Retool.

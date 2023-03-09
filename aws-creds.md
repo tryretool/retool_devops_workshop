@@ -1,24 +1,26 @@
 # **Creating and attaching EC2 and Cost Explorer Permissions to an IAM user**.
 
-For the purposes of this workshop, we will need a User that has the permissions to access EC2 and Cost Explorer APIs. Here are the instructions to create a user and allocate the appropriate permissions. 
+For the purposes of this workshop, you need a user with permissions to access AWS Cost Explorer APIs and Amazon EC2 APIs. You have two options:
 
 ## Option 1: Use Burner Credentials
 
-If you do not have access to an AWS account, or are unable to create a user with the required permissions, for the purposes of this work, use the following burner account credentials. Please note that **these will be destroyed after the workshop, and you would not be able to use them**:
+If you don't have an AWS account or can't create a user with the necessary permissions, you can use the provided burner account credentials. However, please be aware that **these credentials will be destroyed after the workshop, and you won't be able to use them again**.
 
-### Module 1
+### Module 1 (Cost Explorer App)
 
-> - AWS Access Key ID: `AKIA4GSR46W2D5HIPG63`
-> - AWS Secret Key ID: `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`
+- AWS Access Key ID: `AKIA4GSR46W2D5HIPG63`
+- AWS Secret Key ID: `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`
 
-### Module 2
->
-> > - **AWS Access Key ID**: `AKIARFLN3W5QNGVU4P7M`
-> > - **AWS Secret Key ID**: `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`
+### Module 2 (EC2 App)
+
+- **AWS Access Key ID**: `AKIARFLN3W5QNGVU4P7M`
+- **AWS Secret Key ID**: `+8LoapuR6blaTKHAbc5Eapx5fDxq432e+wTDhvRn`
 
 
 ## Option 2: Use your own AWS Credentials
-1. Log in to your AWS console.
+Here are the instructions to create a user and allocate the appropriate permissions. 
+
+1. Log in to your [AWS console](https://aws.amazon.com).
 2. Navigate to the IAM service.
 3. Create a new policy for Cost Explorer using the JSON below. 
 4. Create a new policy for EC2 using the JSON below. 
@@ -28,10 +30,7 @@ If you do not have access to an AWS account, or are unable to create a user with
 8. Copy the `Access Key ID` and `Secret Access Key` for the new user, which will be used to connect Retool to the AWS API.
 
 
-## JSON for Cost Explorer and EC2 Permissions required for these apps
-
-
-### JSON for Cost Explorer Permissions**
+### JSON for Cost Explorer Permissions
 
 This policy is required to retrieve billing data using the AWS Cost Explorer API in Retool.
 
@@ -53,7 +52,3 @@ This policy grants the user permission to perform the following actions, which a
 `ec2:StartInstances` - Start EC2 instances
 
 The `*` in the Resource field specifies that the policy applies to all EC2 instances.
-
-
-## Burner Credentials for this workshop
-

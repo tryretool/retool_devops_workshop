@@ -43,27 +43,28 @@ This guide **includes a burner client id and secret** you can use for the purpos
 
 Alternatively, if you would like to use your own AWS account so you can explore your own data through these apps, please see the section at the end of this guide for step-by-step instructions on [Creating and attaching EC2 and Cost Explorer Permissions to an IAM user](/aws-creds.md).
 
-Let’s get started!
+## Let’s get started!
 
-[Module 1](/module-1.md)
+- [Module 1: Build a Custom AWS Billing Dashboard](/module-1.md)
+- [Module 2: Build a Custom Amazon EC2 Instance Admin Panel](/module-2.md)
 
-[Module 2](/module-2.md)
+### Option to Import JSON File to Create App
+> We highly recommend following each step to get the most out of the guide. 
+> 
+> However, if you prefer, you can skip Part 2 of each module and [import](https://docs.retool.com/docs/import-export-apps?ref=retool-blog) JSON files provided at the end of this guide to create the apps. 
+> 
+> Keep in mind that **you will still need to go through Part 1 of each module**, as it connects to the AWS API with your AWS credentials.
+> 
+> - [JSON for AWS Cost Explorer app](/cost_explorer_app.json)
+> - [JSON for Amazon EC2 Instance Manager app](/ec2_instance_manager_app.json)
+> - [Instructions to create a new app using a JSON file](https://docs.retool.com/docs/import-export-apps?ref=retool-blog)
 
-# Wrapping Up
 
-Congratulations! You've successfully completed this self-guided workshop and built two Retool apps that connect to AWS APIs. You learnt how to use Retool to retrieve and display data, create tabbed containers, use list boxes as inputs for queries, and visualize data with charts.
+## Help/Questions
 
-Remember, these two apps are just the tip of the iceberg when it comes to what you can build with Retool and AWS. The possibilities are endless, and we encourage you to continue exploring and building on what you've learned here.
-
-If you have any questions or feedback, please don't hesitate to reach out to us. We'd love to hear your thoughts and help in any way we can.
-
-Thanks again for your time and effort in completing this workshop. We hope you found it valuable and look forward to seeing what you'll create next with Retool.
-
-
-# Resources
-
-[JSON for Retool AWS Cost Explorer App](https://gist.githubusercontent.com/ajot/6ecab2518cb56e05a21ba8b1ea2c1102/raw/8f614f16819ddbf12017a67a9efa3ff64177be99/retool_aws_cost_explorer_app.json)
-
-[JSON for Retool Amazon EC2 Instance Admin Panel app](https://gist.githubusercontent.com/ajot/e84dff09500d47ba09cd7f5c33e63e6e/raw/3c809237b6fefa2314ab738e6baa62f292cc6eb8/retool_amazon_ec2_instance_admin_panel.json)
-
-[Retool Templates](https://retool.com/templates/)
+- Twitter: [@retool](https://twitter.com/retool)
+- [Retool Community](https://community.retool.com/)
+- Retool's Developer Advocacy team
+  - Amit Jotwani - [@amit](https://twitter.com/amit)
+  - Christina Zhu - [@cszhu](https://twitter.com/cszhu)
+  - Kevin Whinnery - [@kevinwhinnery](https://twitter.com/kevinwhinnery)

@@ -30,6 +30,15 @@ _View costs by Time Period_
 6. How to use a [Table](https://retool.com/components/table) component to display data
 7. How to use a [Date Range](https://retool.com/components/date-range) component to allow users to select a time range
 
+### Option to Import JSON File to Create App
+> We highly recommend following each step to get the most out of the guide. 
+> 
+> However, if you prefer, you can skip Part 2 of this module and [import](https://docs.retool.com/docs/import-export-apps?ref=retool-blog) this JSON file to create the app. 
+> 
+> Keep in mind that **you will still need to go through Part 1 of this module**, and create a Resource since it connects to the AWS API with your AWS credentials.
+> 
+> - [JSON for this app](/cost_explorer_app.json)
+> - [Instructions to create a new app using a JSON file](https://docs.retool.com/docs/import-export-apps?ref=retool-blog)
 
 ## Part 1: Create a Resource in Retool for AWS Cost Explorer API (20 Mins)
 
@@ -297,8 +306,6 @@ return newArray;
 | Sort direction       | `Asc`                                          |
 
 You should now see the data in the table.
-
-TODO: Add Screenshot of the table with data
 
 We are now done designing the first tab of the container. Let's switch to designing the second tab now (By Service View).
 
