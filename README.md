@@ -1,4 +1,4 @@
-# Welcome to the Retool workshop!
+# Welcome to the Retool DevOps workshop!
 This workshop will guide you through building two Retool apps that integrate with AWS services. It will show you how Retool can help you create powerful, user-friendly interfaces for managing your AWS resources.
 
 ## What is Retool
@@ -6,6 +6,10 @@ This workshop will guide you through building two Retool apps that integrate wit
 [Retool](https://retool.com/) is a development platform that lets you build and deploy internal applications quickly with a drag-and-drop interface. It includes all the dev tools and runtime components you need to create an application, including a visual IDE and [UI component library](https://retool.com/components) to build front ends, as well as backend services to handle, with [native connectors for most databases and APIs](https://retool.com/integrations/). 
 
 So instead of building a custom application from scratch using a mix of different tools, frameworks, and infrastructure, Retool provides a complete development stack where all the pieces are designed to work together.
+
+[TOC]
+
+
 
 ## What you will build
 
@@ -37,11 +41,11 @@ Throughout the workshop, you will learn how to use Retool's intuitive drag-and-d
 
 ## Prerequisite
 
-You will need AWS client ID and secret of an AWS user that has permissions to access Amazon EC2 AP, and AWS Cost Explorer API.
+To be able to build these modules, you would need **AWS client ID and secret** of an AWS user that has permissions to access Amazon EC2 AP, and AWS Cost Explorer API.
 
 This guide **includes a burner client id and secret** you can use for the purposes of this workshop. Please note that **these will be destroyed after the workshop** and you would not be able to use them. 
 
-Alternatively, if you would like to use your own AWS account so you can explore your own data through these apps, please see the section at the end of this guide for step-by-step instructions on **Creating and attaching EC2 and Cost Explorer Permissions to an IAM user**.
+Alternatively, if you would like to use your own AWS account so you can explore your own data through these apps, please see the section at the end of this guide for step-by-step instructions on [Creating and attaching EC2 and Cost Explorer Permissions to an IAM user](https://github.com/tryretool/retool_devops_workshop#creating-and-attaching-ec2-and-cost-explorer-permissions-to-an-iam-user).
 
 Let’s get started!
 
@@ -71,7 +75,7 @@ _View costs by Service_
 _View costs by Time Period_
 
 
-### What you will learn
+## What you will learn
 
 1. How to use Retool to connect to [AWS Cost Explorer API](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-api.html)
 2. How to retrieve and display data retrieved from AWS Cost Explorer API using [Retool’s component library](https://retool.com/components)
@@ -133,7 +137,7 @@ We are done creating the Resource. Let's now connect to it by creating an app.
 ## Part 2: Create the Retool app using this Resource (45 mins)
 
 
-### Create a query to get AWS billing data
+### 1-Get data from AWS Cost Explorer API by creating a Resource query
 
 [Queries](https://docs.retool.com/docs/queries) are the way we pull in data (read or write data) into a Retool app, so we can use them in components. In this case, we'll create a query that gets the costs from the AWS Cost Explorer API, grouped by month and service.
 
@@ -193,7 +197,7 @@ Here’s what the [App editor](https://docs.retool.com/docs/app-editor) for a ne
 > 
 > ![alt_text](images/image28.png "image_tooltip")
 
-### Write a JavaScript Transformer to restructure the data returned by the Cost Explorer API
+### 2-Restructure the data returned by the Cost Explorer API by writing a JavaScript Transformer
 
 As you can see, the data returned by AWS Cost Explorer API is quite nested, and can be difficult to navigate. To make it easier, we want to format it to return this simple structure:
 
@@ -271,7 +275,7 @@ return newArray;
 ![alt_text](images/image19.png "image_tooltip")
 
 
-### Use the Date Range component to allow selection of  start and end dates
+### 3-Use the Date Range component to allow selection of  start and end dates
 
 
 1. Drag the **Date Range** component to the canvas
@@ -320,7 +324,7 @@ return newArray;
 ```
 
 
-### Use a Tabbed Container component to set up the three views 
+### 4-Use a Tabbed Container component to set up the three views 
 
 1. Drag a **Tabbed Container** component to the canvas  
     1. Name it `billingTabbedContainer`
@@ -335,7 +339,7 @@ return newArray;
 
 
 
-### Populate the Table with the costs
+### 5-Populate the Table with the costs
 
 1. Drag a Table component inside the **first view** of the tabbed container. 
 2. Set its properties on the right panel to -
@@ -351,11 +355,10 @@ You should now see the data in the table.
 
 TODO: Add Screenshot of the table with data
 
-## Designing the second tab (By Service View):
+We are now done designing the first tab of the container. Let's switch to designing the second tab now (By Service View).
 
 
-### Add a Listbox to show the list of services to choose from
-
+### 7-Add a Listbox to show the list of services to choose from
 1. Create a Transformer to to populate the ListBox for Services
     1. Name it `getListofServices` 
     2. Paste the following code in this Transformer. 
@@ -388,14 +391,14 @@ serviceList.sort((a, b) => {
 console.log(serviceList);
 return serviceList;
 ```
-
-2. Drag a **Listbox** component inside the second tab of the tabbed container
+2. Click on the second tab of the container on the canvas.
+3. Then, drag a **Listbox** component inside the second tab of the tabbed container
     1. Name it `servicesListBox`
     2. Data source: `getListofServices`
 
+The Listbox should not be populated with the list of services.
 
-
-### Display the total cost for the selected service
+### 8-Display the total cost for the selected service
 
 1. Create a Transformer to filter the results returned by the Cost Explorer API, and calculate the total amount spent on the selected service.
     1. Name it `filterCostByService`
@@ -467,10 +470,9 @@ return resultObject;
 6. Finally, hide the Service column by clicking on the "eye" icon for the column in the right panel.
 
 
-## Designing the third tab (By Time Period View)
+We are now done designing the second tab of the container. Let's switch to designing the third tab now (By Time Period View).
 
-
-### Add a Listbox to show the list of time periods to choose from
+### 9-Add a Listbox to show the list of time periods to choose from
 
 1. Create a new Transformer to populate the ListBox for Time Period
     1. Name it `getListofTimePeriods` 
@@ -493,9 +495,7 @@ console.log(timePeriodList);
 return timePeriodList;
 
 ```
-### Display the total cost for the selected time period
-
-
+### 10-Display the total cost for the selected time period
 
 1. Create a Transformer to filter the results returned by the Cost Explorer API, and calculate the total amount spent in each time period.
     1. Name it `filterCostByTimePeriod`
@@ -610,24 +610,28 @@ In this module, you will learn how to use Retool and Amazon EC2 API to build an 
 
 ## Part 2: Create the Retool app using this Resource (45 mins)
 
-### Writing Resource Queries to connect with the EC2 API 
+### 1-Writing Resource Queries to connect with the EC2 API 
 
 1. Create a new Retool App
-2. In the new Retool app, create a new Resource query to launch a new instance using EC2 API’s `RunInstances` action.
-    | Property     | Value                                                        |
-    | ------------ | ------------------------------------------------------------ |
-    | Rename it to | `launchNewEC2Instance`                                       |
-    | Action Type  | `POST`                                                       |
-    | Headers      | `Content-Type` : `application/x-www-form-urlencoded; charset=utf-8` |
-    | Body         | `x-www-form-urlencoded`                                      |
-    | Body Params  |                                                              |
-    | Action       | `RunInstances`                                               |
-    | ImageId      | `ami-0dfcb1ef8550277af`                                      |
-    | InstanceType | `t2.micro`                                                   |
-    | MinCount     | `1`                                                          |
-    | MaxCount     | `1`                                                          |
-    | Version      | `2016-11-15`                                                 |
-2. Create a new Resource query to list all instances using EC2 API’s `DescribeInstances` action.
+
+#### 1-Launch a new instance
+In the new Retool app, create a new Resource query to launch a new instance using EC2 API’s `RunInstances` action.
+  | Property     | Value                                                        |
+  | ------------ | ------------------------------------------------------------ |
+  | Rename it to | `launchNewEC2Instance`                                       |
+  | Action Type  | `POST`                                                       |
+  | Headers      | `Content-Type` : `application/x-www-form-urlencoded; charset=utf-8` |
+  | Body         | `x-www-form-urlencoded`                                      |
+  | Body Params  |                                                              |
+  | Action       | `RunInstances`                                               |
+  | ImageId      | `ami-0dfcb1ef8550277af`                                      |
+  | InstanceType | `t2.micro`                                                   |
+  | MinCount     | `1`                                                          |
+  | MaxCount     | `1`                                                          |
+  | Version      | `2016-11-15`                                                 |
+
+#### 1-List all instances
+1. Create a new Resource query to list all instances using EC2 API’s `DescribeInstances` action.
     | Property    | Value                                                        |
     | ----------- | ------------------------------------------------------------ |
     | Name        | `getAllEC2Instances`                                         |
@@ -638,30 +642,23 @@ In this module, you will learn how to use Retool and Amazon EC2 API to build an 
 >1. **instance-type:** Instance type refers to an EC2 template that specifies the amount of resources (such as CPUs and memory) that a virtual machine will have. In this case, the value for the instance-type filter is "t2.micro", which are instances that have 1 vCPU and 1GB of memory.
 > 2. **architecture:** Architecture refers to the type of processor used by the instance. In this case, the value for the architecture filter is "x86_64", which refers to a 64-bit processor architecture commonly used in personal computers.
 
-
-
-
-
-
 ![alt_text](images/image30.png "image_tooltip")
 
-
-
-3. Click on **Run** to see the results of the API. You can also explore the data in the **State** tab in the left panel.
+2. Click on **Run** to see the results of the API. You can also explore the data in the **State** tab in the left panel.
 
 ![alt_text](images/image4.png "image_tooltip")
 
 
-4. **Enable caching of query results and run the query on page load**
+3. **Enable caching of query results and run the query on page load**
     1. Click **Advanced** tab in `getAllEC2Instances`’s query editor
     2. Check the `Cache the results of this query` box. This will store the results of the query and prevent the need to make the request each time, improving performance and load speeds of the application.
     3. Check the `Run this query on page load?` box. This will ensure that our table of EC2 instances is automatically populated when the app opens, we will also check the box 
 
 ![alt_text](images/image27.png "image_tooltip")
 
-5. **Transforming the data to make it easy to navigate:** The XML data returned by the EC2 API is deeply nested, making it difficult to extract the relevant information for each instance. So, we will write a bit of custom JavaScript code to “transform” the data into an easily readable array of objects using a JavaScript Transformer.
+4. **Transforming the data to make it easy to navigate:** The XML data returned by the EC2 API is deeply nested, making it difficult to extract the relevant information for each instance. So, we will write a bit of custom JavaScript code to “transform” the data into an easily readable array of objects using a JavaScript Transformer.
 
-6. Add a new Transformer to format instance data for `getAllEC2Instances` Resource query
+5. Add a new Transformer to format instance data for `getAllEC2Instances` Resource query
     1. Name it `transformInstanceData`
     2. Paste the following code - 
 
@@ -724,38 +721,38 @@ return finalData;
 
 ![alt_text](images/image31.png "image_tooltip")
 
-7. **Create a new Resource query to Stop an instance:** using EC2 APIs StopInstances action 
-    
-    | Property     | Value                                                        |
-    | ------------ | ------------------------------------------------------------ |
-    | Name         | `stopEC2InstanceByInstanceID`                                |
-    | Action Type  | `POST`                                                       |
-    | Headers      | `Content-Type: application/x-www-form-urlencoded; charset=utf-8` |
-    | Body         | `x-www-form-urlencoded`                                      |
-    | Body Params  |                                                              |
-    | Action       | `StopInstances`                                              |
-    | InstanceId.1 | `{{manageInstancesTable.selectedRow.data.instanceId}}`       |
-    | Version      | `2016-11-15`                                                 |
+#### 3-Stop an instance
+**Create a new Resource query to Stop an instance:** using EC2 APIs StopInstances action 
+
+  | Property     | Value                                                        |
+  | ------------ | ------------------------------------------------------------ |
+  | Name         | `stopEC2InstanceByInstanceID`                                |
+  | Action Type  | `POST`                                                       |
+  | Headers      | `Content-Type: application/x-www-form-urlencoded; charset=utf-8` |
+  | Body         | `x-www-form-urlencoded`                                      |
+  | Body Params  |                                                              |
+  | Action       | `StopInstances`                                              |
+  | InstanceId.1 | `{{manageInstancesTable.selectedRow.data.instanceId}}`       |
+  | Version      | `2016-11-15`                                                 |
 
 
+#### 4-Start an instance
+**Create a new Resource query to Start an instance:** using EC2 APIs `StartInstances` action 
 
-7. **Create a new Resource query to Start an instance:** using EC2 APIs `StartInstances` action 
+1. Duplicate the `stopEC2InstanceByInstanceID` query
 
-    1. Duplicate the `stopEC2InstanceByInstanceID` query
+  | Property     | Value                          |
+  | ------------ | ------------------------------ |
+  | Rename it to | `startEC2InstanceByInstanceID` |
+  | Body Params  |                                |
+  | Action       | `StartInstances`               |
 
-    | Property     | Value                          |
-    | ------------ | ------------------------------ |
-    | Rename it to | `startEC2InstanceByInstanceID` |
-    | Body Params  |                                |
-    | Action       | `StartInstances`               |
+2. Everything else remains the same as `stopEC2InstanceByInstanceID`
 
-    2. Everything else remains the same as `stopEC2InstanceByInstanceID`
+### 2-Getting the EC2 image data for the Listbox
+You can use Amazon EC2’s DescribeImages action to get details about the images. But since we only want to list the images available in the free tier, instead of calling an API, we will simply create a JSON object with the list of images we want to display.
 
-    
-
-8. Add a **JavaScript Query** that returns a simple JSON object for list of EC2 images to choose from
-    > **Why?** You can use Amazon EC2’s DescribeImages action to get details about the images. But since we only want to list the images available in the free tier, instead of calling an API, we will simply create a JSON object with the list of images we want to display.
-
+1. Add a **JavaScript Query** that returns a simple JSON object for list of EC2 images to choose from
     1. Click on the **+** button in the left side panel, and click **JavaScript query** 
         1. Name this query `imageDataJSON` 
         2. Paste this code below into it
@@ -796,11 +793,9 @@ return(imageData)
 ![alt_text](images/image12.png "image_tooltip")
 
 
-10. **Pre-load the Image data when the app launches:** To ensure our Listbox is automatically populated when the app opens, we will check the box Run this query on page load? in the advanced tab for the `imageDataJSON` query.
+2. **Pre-load the Image data when the app launches:** To ensure our Listbox is automatically populated when the app opens, we will check the box Run this query on page load? in the advanced tab for the `imageDataJSON` query.
 
 ![alt_text](images/image12.png "image_tooltip")
-
-### Designing the UI, and connect it to the Queries and Transformers **(20 mins)**
 
 1. Drag a **Text component** to the canvas. Name it appTitleText
     1. Value: `## AWS EC2 Instance Manager`
@@ -810,7 +805,7 @@ return(imageData)
 
 ![alt_text](images/image3.png "image_tooltip")
 
-#### Designing the top container to choose and launch EC2 images
+### 3-Designing the top container to choose and launch EC2 images
 
 1. Name the top container `launchInstanceContainer`
 2. Set the title for container Title to `#### Launch new EC2 Instance`
@@ -841,7 +836,7 @@ return(imageData)
 
 
 
-#### Designing the bottom container 
+### 4-Designing the bottom container 
 
 1. Name the bottom container manageInstancesContainer
 2. Set the title for Container Title to `#### Manage Instances`
