@@ -451,19 +451,20 @@ return timePeriodList;
 
 ```javascript
 const newArray = {{transformCostByServiceAndTimePeriodData.value}};
-const serviceName = {{servicesListBox.value}};
+const timePeriod = {{timePeriodListBox.value}};
 
-const filteredArray = newArray.filter(item => item.Service === serviceName);
+const filteredArray = newArray.filter(item => item.TimePeriod === timePeriod);
 const totalAmount = filteredArray.reduce((accumulator, item) => accumulator + item.Amount, 0).toFixed(2);
 
 const resultObject = {
-  serviceName,
+  timePeriod,
   totalAmount,
   data: filteredArray
 };
 
 console.log(resultObject);
 return resultObject;
+
 ```
 
 2. Drag a **Listbox** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
