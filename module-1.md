@@ -416,7 +416,7 @@ return resultObject;
 | Sort direction                  | `Asc`                                |
 
 
-6. Set Background color property for `servicesTable` to this conditional
+6. Set Row color property for `servicesTable` to this conditional
 
 ```javascript
 {{currentRow.Amount < 10 ? '':'red'}}
@@ -505,9 +505,7 @@ return resultObject;
     9. Y-axis title: `USD`
     10. Y-axis tick format: `$`
 
-​	
-
-2. Drag a **Table** component inside the third tab of the tabbed container, and set the properties in the right panel inspector to - 
+5. Drag a **Table** component inside the third tab of the tabbed container, and set the properties in the right panel inspector to - 
     | Property                        | Value                                   |
     | ------------------------------- | --------------------------------------- |
     | Rename it to                    | `timePeriodTable`                       |
@@ -516,10 +514,10 @@ return resultObject;
     | Sorting column                  | `Amount`                                |
     | Sort direction                  | `Desc`                                  |
 
-3. Set Background color property for `timePeriodTable` to this conditional -
+6. Set Row color property for `timePeriodTable` to this conditional -
 
 ```javascript
 {{currentRow.Amount < 10 ? '':'red'}}
 ```
 
-4. Preview the app by clicking on the **Preview** button
+7. Preview the app by clicking on the **Preview** button
