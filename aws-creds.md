@@ -4,7 +4,10 @@ For the purposes of this workshop, you need a user with permissions to access AW
 
 ## Option 1: Use Burner Credentials
 
-If you don't have an AWS account or can't create a user with the necessary permissions, you can use the provided [burner account credentials](https://retoolhacks.retool.com/embedded/public/01a42798-34b3-4a33-9829-65e3d8d95e2a). However, please be aware that **these credentials will be destroyed after the workshop, and you won't be able to use them again**.
+If you don't have an AWS account or can't create a user with the necessary permissions, you can use the provided [burner account credentials](https://bit.ly/retool_workshop_aws). However, please be aware that **these credentials will be destroyed after the workshop, and you won't be able to use them again**.
+
+- [burner account credentials](https://bit.ly/retool_workshop_aws)
+- pwd: `gnvdxx8ctmk`
 
 ## Option 2: Use your own AWS Credentials
 Here are the instructions to create a user and allocate the appropriate permissions. 
