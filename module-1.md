@@ -299,6 +299,7 @@ return newArray;
 | Data                 | `transformCostByServiceAndTimePeriodData.value` |
 | Sort column          | `TimePeriod`                                   |
 | Sort direction       | `Asc`                                          |
+| Column type (for Amount column) | `Currency`                           |
 
 You should now see the data in the table.
 
@@ -387,7 +388,7 @@ return resultObject;
 | Label          | `Cost for {{servicesListBox.value}}`        |
 | Primary value  | `{{filterCostByService.value.totalAmount}}` |
 | Caption        | `{{currentDateRange.value}}`                |
-| Positive trend | `{{ self.value &lt;= 20 }}`                 |
+| Positive trend | `{{ self.value <= 20 }}`                 |
 
 4. Drag a **Chart** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
     1. Name it `serviceCostChart`
@@ -486,7 +487,7 @@ return resultObject;
     | Label          | `Total Cost for {{timePeriodListBox.value}}`   |
     | Primary value  | `{{filterCostByTimePeriod.value.totalAmount}}` |
     | Caption        | `{{currentDateRange.value}}`                   |
-    | Positive trend | `{{ self.value &lt;= 20 }}`                    |
+    | Positive trend | `{{ self.value <= 20 }}`                    |
     
 4. Drag a **Chart** component inside the second tab of the tabbed container, and set the properties in the right panel inspector to - 
     1. Name it `timePeriodCostChart`
