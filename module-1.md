@@ -414,8 +414,14 @@ return resultObject;
 | Sorting column                  | `TimePeriod`                         |
 | Sort direction                  | `Asc`                                |
 
-6. Finally, hide the Service column by clicking on the "eye" icon for the column in the right panel.
 
+6. Set Background color property for `servicesTable` to this conditional
+
+```javascript
+{{currentRow.Amount < 10 ? '':'red'}}
+```
+
+7. Finally, hide the Service column by clicking on the "eye" icon for the column in the right panel.
 
 We are now done designing the second tab of the container. Let's switch to designing the third tab now (By Time Period View).
 
@@ -509,4 +515,10 @@ return resultObject;
     | Sorting column                  | `Amount`                                |
     | Sort direction                  | `Desc`                                  |
 
-3. Preview the app by clicking on the **Preview** button
+3. Set Background color property for `timePeriodTable` to this conditional -
+
+```javascript
+{{currentRow.Amount < 10 ? '':'red'}}
+```
+
+4. Preview the app by clicking on the **Preview** button
